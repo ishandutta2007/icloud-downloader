@@ -94,6 +94,11 @@ python icloud_downloader.py --all-albums
 | `--all-albums`|                   | If set, downloads all albums into sub-folders. This overrides the `--album` option.                     | `False`         |
 
 
+### ✨ Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=ishandutta2007/icloud-downloader&type=date&legend=top-left)](https://www.star-history.com/#ishandutta2007/icloud-downloader&type=date&legend=top-left)
+
+
 ## ⚠️ Disclaimer
 
 This tool is an unofficial, third-party utility and is not affiliated with Apple Inc. Storing your Apple ID and password in any file can be a security risk. Please use this tool at your own risk and ensure your `.env` file is kept secure and is never committed to any version control system.
