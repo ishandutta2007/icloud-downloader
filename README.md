@@ -1,21 +1,25 @@
-# iCloud Photo Downloader
+# 🚀 iCloud Photo & Video Downloader
 
-A simple yet powerful command-line tool to download your photos and albums from iCloud.
+A simple yet powerful Python script to download and back up your photos and albums from iCloud.
+
+![Made with Python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)
 
 ![Demo](https://i.imgur.com/tL4g1zC.gif)
 
-## Features
+This command-line tool provides an easy way to automate the backup of your Apple Photos library.
 
-- **Easy to Use**: Simple command-line interface.
-- **Secure**: Uses environment variables to handle your Apple ID and password, so they are not hard-coded or exposed in your shell history.
-- **Two-Factor Authentication (2FA) Support**: Prompts for 2FA code if required.
-- **Flexible Downloading**:
+## ✨ Features
+
+- **Easy to Use**: Simple and intuitive command-line interface (CLI).
+- **🔒 Secure**: Uses environment variables (`.env` file) to handle your Apple ID and password securely. Your credentials are not hard-coded or exposed in your shell history.
+- **📱 2FA Support**: Full support for Two-Factor Authentication (2FA) by prompting for the code when required.
+- **🗂️ Flexible Downloading**:
   - Download all photos from a specific album.
-  - Download photos from *all* your albums at once.
-- **Progress Bars**: Visual feedback on download progress.
-- **Resilient**: Skips files that fail to download and continues with the rest.
+  - Download photos and videos from *all* your albums at once into organized folders.
+- **📊 Progress Bars**: Clean visual feedback on download progress using `tqdm`.
+- **💪 Resilient**: Skips files that fail to download and continues with the rest, ensuring the backup process completes.
 
-## Installation
+## 📦 Installation
 
 1.  **Clone the repository:**
     ```bash
@@ -24,9 +28,12 @@ A simple yet powerful command-line tool to download your photos and albums from 
     ```
 
 2.  **Install dependencies:**
-    It's recommended to use a virtual environment.
+    It's highly recommended to use a Python virtual environment.
     ```bash
+    # Create a virtual environment
     python -m venv venv
+
+    # Activate it
     source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
     ```
     Then, install the required packages:
@@ -34,11 +41,11 @@ A simple yet powerful command-line tool to download your photos and albums from 
     pip install -r requirements.txt
     ```
 
-## Usage
+## 💡 Usage
 
-### 1. Set Up Your Credentials
+### 1. 🔑 Set Up Your Credentials
 
-For security, the tool is designed to read your Apple ID and password from a `.env` file in the project directory.
+For maximum security, the tool is designed to read your Apple ID and password from a `.env` file in the project directory.
 
 1.  Create a file named `.env`:
     ```bash
@@ -51,34 +58,34 @@ For security, the tool is designed to read your Apple ID and password from a `.e
     APPLE_PASSWORD=your_super_secret_password
     ```
 
-> **Note**: The `.gitignore` file is already configured to ignore `.env` files, so you won't accidentally commit your credentials. If you prefer not to use a `.env` file, the script will prompt you to enter your credentials when you run it.
+> **Note**: The `.gitignore` file is already configured to ignore `.env` files, so you won't accidentally commit your credentials. If you prefer not to use a `.env` file, the script will securely prompt you to enter your credentials when you run it.
 
-### 2. Run the Downloader
+### 2. ▶️ Run the Downloader
 
-Execute the script using `python`:
+Execute the script using `python` from your terminal.
 
-**To download the "All Photos" album to a `iCloud_Photos` directory:**
+**To download the "All Photos" album to a default `iCloud_Photos` directory:**
 ```bash
 python icloud_downloader.py
 ```
 
 **To specify a different album:**
 ```bash
-python icloud_downloader.py --album "Your Album Name"
+python icloud_downloader.py --album "Summer Vacation"
 ```
 
 **To specify a different download directory:**
 ```bash
-python icloud_downloader.py --directory "./My_Downloads"
+python icloud_downloader.py --directory "./My_iCloud_Backup"
 ```
 
-**To download all albums into separate folders:**
-This will create a main directory (e.g., `iCloud_Photos`) and place each album inside its own sub-folder.
+**To download ALL albums into separate folders:**
+This will create a main directory and place each album inside its own sub-folder, replicating your iCloud structure.
 ```bash
 python icloud_downloader.py --all-albums
 ```
 
-### Command Options
+### ⚙️ Command Options
 
 | Option        | Argument          | Description                                                                                             | Default         |
 |---------------|-------------------|---------------------------------------------------------------------------------------------------------|-----------------|
@@ -87,6 +94,6 @@ python icloud_downloader.py --all-albums
 | `--all-albums`|                   | If set, downloads all albums into sub-folders. This overrides the `--album` option.                     | `False`         |
 
 
-## Disclaimer
+## ⚠️ Disclaimer
 
-This tool is not affiliated with Apple Inc. It is a third-party utility. Storing your Apple ID and password in a file can be a security risk. Please use this tool at your own risk and ensure your `.env` file is kept secure and is not committed to any version control system.
+This tool is an unofficial, third-party utility and is not affiliated with Apple Inc. Storing your Apple ID and password in any file can be a security risk. Please use this tool at your own risk and ensure your `.env` file is kept secure and is never committed to any version control system.
